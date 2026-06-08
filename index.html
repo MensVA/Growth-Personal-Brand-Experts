@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Personal Brand Experts | Producción de Video</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter para un look premium y minimalista -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        apple: {
+                            black: '#000000',
+                            dark: '#111111',
+                            card: '#1c1c1e',
+                            gray: '#86868b',
+                            light: '#f5f5f7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f5f7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Glassmorphism para el Navbar */
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Botones y Filtros Minimalistas */
+        .btn-primary {
+            background-color: #f5f5f7;
+            color: #000000;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            background-color: #ffffff;
+        }
+
+        .filter-btn {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #86868b;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            color: #f5f5f7;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .filter-btn.active {
+            background-color: #f5f5f7;
+            color: #000000;
+            border-color: #f5f5f7;
+        }
+
+        /* Tarjetas de Portafolio Premium */
+        .premium-card {
+            background-color: #1c1c1e;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-img-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .premium-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        /* Play Button estilo iOS */
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .premium-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .premium-card:hover .play-btn {
+            transform: scale(1);
+        }
+
+        /* Inputs de Formulario */
+        .minimal-input {
+            background-color: #1c1c1e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f5f5f7;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .minimal-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            background-color: #2c2c2e;
+        }
+
+        /* Animación para filtrado */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .portfolio-item {
+            animation: fadeUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+
+        /* Overrides para quitar bordes y fondos blancos de TikTok */
+        .tiktok-embed {
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            margin: 0 auto !important;
+        }
+
+        .tiktok-embed iframe {
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+
+        /* Overrides para quitar bordes y fondos blancos de Instagram */
+        .instagram-media {
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            margin: 0 auto !important;
+            border-radius: 24px !important;
+        }
+
+        .instagram-media iframe {
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            border-radius: 24px !important;
+        }
+    </style>
+</head>
+
+<body class="font-sans flex flex-col min-h-screen">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="text-xl font-bold tracking-tight text-white">Growth <span
+                            class="text-sm font-normal text-apple-gray">Personal Brand Experts</span></span>
+                </div>
+
+                <!-- Menú Desktop -->
+                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="#inicio" class="text-apple-gray hover:text-white transition-colors">Inicio</a>
+                    <a href="#agencia" class="text-apple-gray hover:text-white transition-colors">Agencia</a>
+                    <a href="#portafolio" class="text-apple-gray hover:text-white transition-colors">Portafolio de
+                        Clientes
+                    </a>
+                    <a href="#contacto" class="btn-primary px-5 py-2 rounded-full font-semibold">Contactar</a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-apple-card border-b border-white/10 absolute w-full">
+            <div class="px-6 pt-4 pb-8 space-y-4 flex flex-col">
+                <a href="#inicio"
+                    class="block text-lg font-medium text-apple-gray hover:text-white mobile-link">Inicio</a>
+                <a href="#agencia"
+                    class="block text-lg font-medium text-apple-gray hover:text-white mobile-link">Agencia</a>
+                <a href="#portafolio"
+                    class="block text-lg font-medium text-apple-gray hover:text-white mobile-link">Trabajo</a>
+                <a href="#contacto" class="block text-lg font-medium text-white mobile-link pt-2">Contactar →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio"
+        class="pt-32 pb-20 md:pt-48 md:pb-32 px-4 flex-grow flex items-center relative overflow-hidden">
+        <div class="max-w-5xl mx-auto w-full text-center relative z-10">
+            <p class="text-apple-gray font-medium tracking-wide text-sm md:text-base mb-4">
+                Agencia de Producción Audiovisual
+            </p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter leading-tight mb-6">
+                Contenido visual<br>
+                <span class="text-apple-gray">Alto impacto</span>
+            </h1>
+            <p class="text-apple-gray text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-10">
+                En Growth Personal Brand Experts creamos videos que capturan la atención, cuentan tu historia y conectan
+                con tu audiencia.
+                Simple, elegante y efectivo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#portafolio"
+                    class="btn-primary px-8 py-3.5 rounded-full font-semibold text-base w-full sm:w-auto">
+                    Ver nuestro trabajo
+                </a>
+                <a href="#contacto"
+                    class="px-8 py-3.5 rounded-full text-white font-medium hover:bg-white/10 transition-colors w-full sm:w-auto">
+                    Hablemos de tu proyecto <i class="fas fa-chevron-right text-xs ml-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Gradiente sutil de fondo para dar profundidad -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white opacity-[0.02] rounded-full blur-[120px] pointer-events-none">
+        </div>
+    </section>
+
+    <!-- Agencia Section -->
+    <section id="agencia" class="py-24 bg-apple-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+
+
+            </div>
+
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Misión -->
+                <div
+                    class="bg-apple-card/50 p-8 rounded-3xl border border-white/5 hover:border-white/10 hover:bg-apple-card transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-white text-xl mb-6">
+                        <i class="fas fa-bullseye text-purple-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Misión</h4>
+                    <p class="text-purple-300 text-xs font-semibold mb-4 uppercase tracking-wider">Democratizar la
+                        edición profesional</p>
+                    <p class="text-apple-gray font-light text-sm leading-relaxed">
+                        Ayudar a marcas personales a crecer en redes sociales mediante un sistema de creación y
+                        edición de contenido que les permita enfocarse en lo que realmente importa: escalar su
+                        marca, democratizando el acceso a una edición de video de nivel profesional.
+                    </p>
+                </div>
+
+                <!-- Visión -->
+                <div
+                    class="bg-apple-card/50 p-8 rounded-3xl border border-white/5 hover:border-white/10 hover:bg-apple-card transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-white text-xl mb-6">
+                        <i class="fas fa-eye text-pink-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Visión</h4>
+                    <p class="text-pink-300 text-xs font-semibold mb-4 uppercase tracking-wider">Referente en
+                        crecimiento digital</p>
+                    <p class="text-apple-gray font-light text-sm leading-relaxed">
+                        Nos convertimos en una agencia referente en crecimiento de marcas personales, reconocida por
+                        nuestro enfoque estratégico, organización interna y capacidad para transformar el contenido
+                        en una herramienta real de expansión y posicionamiento.
+                    </p>
+                </div>
+
+                <!-- Valores -->
+                <div
+                    class="bg-apple-card/50 p-8 rounded-3xl border border-white/5 hover:border-white/10 hover:bg-apple-card transition-all duration-300">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-white text-xl mb-6">
+                        <i class="fas fa-heart text-blue-400"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Valores</h4>
+                    <p class="text-blue-300 text-xs font-semibold mb-4 uppercase tracking-wider">Nuestra brújula
+                        ética</p>
+                    <ul class="text-apple-gray font-light text-sm space-y-3">
+                        <li><strong class="text-white font-medium">Compromiso:</strong> Cumplimos con los tiempos y
+                            procesos establecidos, priorizando siempre la experiencia del cliente.</li>
+                        <li><strong class="text-white font-medium">Creatividad con propósito:</strong> No creamos
+                            contenido por crear, cada pieza responde a una estrategia.</li>
+                        <li><strong class="text-white font-medium">Responsabilidad:</strong> Entendemos que
+                            trabajamos con la imagen y reputación de cada marca personal.</li>
+                        <li><strong class="text-white font-medium">Mentalidad de crecimiento:</strong> Promovemos
+                            decisiones estratégicas, delegación inteligente y visión a largo plazo.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Portafolio Section (CON FILTROS) -->
+    <section id="portafolio" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Portafolio de Clientes</h2>
+
+                <!-- Botones de Filtro Minimalistas -->
+                <div class="flex flex-wrap gap-3 justify-center text-sm font-medium">
+                    <button class="filter-btn active px-6 py-2 rounded-full" data-filter="all">Todos</button>
+                    <button class="filter-btn px-6 py-2 rounded-full" data-filter="ecommerce">Business</button>
+                    <button class="filter-btn px-6 py-2 rounded-full" data-filter="tech">Marcas Personales</button>
+                    <button class="filter-btn px-6 py-2 rounded-full" data-filter="realestate">Finanzas</button>
+                    <button class="filter-btn px-6 py-2 rounded-full" data-filter="fitness">Inmobiliaria</button>
+                </div>
+            </div>
+
+            <!-- Grid de Videos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="portfolio-grid">
+
+                <!-- Video 1 (Business - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="ecommerce">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@colpergroup/video/7538284171966287109"
+                        data-video-id="7538284171966287109"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@colpergroup"
+                                href="https://www.tiktok.com/@colpergroup?refer=embed">@colpergroup</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 2 (Inmobiliaria - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="ecommerce">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@colpergroup/video/7538615647027121416"
+                        data-video-id="7538615647027121416"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@colpergroup"
+                                href="https://www.tiktok.com/@colpergroup?refer=embed">@colpergroup</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 3 (Business - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="ecommerce">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@colpergroup/video/7625691860433931527"
+                        data-video-id="7625691860433931527"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@colpergroup"
+                                href="https://www.tiktok.com/@colpergroup?refer=embed">@colpergroup</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 4 (Finanzas - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="ecommerce">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@colpergroup/video/7540453454599277831"
+                        data-video-id="7540453454599277831"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@colpergroup"
+                                href="https://www.tiktok.com/@colpergroup?refer=embed">@colpergroup</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 5 (Marcas Personales - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="ecommerce">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@colpergroup/video/7550433120126815495"
+                        data-video-id="7550433120126815495"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@colpergroup"
+                                href="https://www.tiktok.com/@colpergroup?refer=embed">@colpergroup</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 6 (Marcas Personales - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="tech">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@soymaryclaudia/video/7645888106268232973"
+                        data-video-id="7645888106268232973"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@soymaryclaudia"
+                                href="https://www.tiktok.com/@soymaryclaudia?refer=embed">@soymaryclaudia</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 7 (Marcas Personales - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="tech">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DXnh4_4E_oR/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DXnh4_4E_oR/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 8 (Marcas Personales - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="tech">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DXxIQY4TTRw/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DXxIQY4TTRw/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 8a (Marcas Personales - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="tech">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DZORiu7TrCw/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DZORiu7TrCw/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 8b (Marcas Personales - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="tech">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DYnnpa-xV2l/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DYnnpa-xV2l/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 9 (Finanzas - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="realestate">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@juanluishuertaa/video/7373806886606474501"
+                        data-video-id="7373806886606474501"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@juanluishuertaa"
+                                href="https://www.tiktok.com/@juanluishuertaa?refer=embed">@juanluishuertaa</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 10 (Finanzas - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="realestate">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@juanluishuertaa/video/7633238054630591752"
+                        data-video-id="7633238054630591752"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@juanluishuertaa"
+                                href="https://www.tiktok.com/@juanluishuertaa?refer=embed">@juanluishuertaa</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 11 (Finanzas - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="realestate">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@juanluishuertaa/video/7373806886606474501"
+                        data-video-id="7373806886606474501"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@juanluishuertaa"
+                                href="https://www.tiktok.com/@juanluishuertaa?refer=embed">@juanluishuertaa</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 12 (Finanzas - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="realestate">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@juanluishuertaa/video/7210566667884154117"
+                        data-video-id="7210566667884154117"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@juanluishuertaa"
+                                href="https://www.tiktok.com/@juanluishuertaa?refer=embed">@juanluishuertaa</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 13 (Finanzas - TikTok Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="realestate">
+                    <blockquote class="tiktok-embed mx-auto"
+                        cite="https://www.tiktok.com/@juanluishuertaa/video/7632514170705022215"
+                        data-video-id="7632514170705022215"
+                        style="max-width: 325px; min-width: 325px; width: 325px; border: none; box-shadow: none; background: transparent;">
+                        <section>
+                            <a target="_blank" title="@juanluishuertaa"
+                                href="https://www.tiktok.com/@juanluishuertaa?refer=embed">@juanluishuertaa</a>
+                        </section>
+                    </blockquote>
+                </div>
+
+                <!-- Video 14 (Inmobiliaria - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="fitness">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DZD6L5pDHro/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DZD6L5pDHro/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 15 (Inmobiliaria - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="fitness">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DZD5rCYAa_b/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DZD5rCYAa_b/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 16 (Inmobiliaria - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="fitness">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DZDOAg7E9uy/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DZDOAg7E9uy/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 17 (Inmobiliaria - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="fitness">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DZDNqUfkxio/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DZDNqUfkxio/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+                <!-- Video 18 (Inmobiliaria - Instagram Embed) -->
+                <div class="portfolio-item flex justify-center w-full" data-niche="fitness">
+                    <blockquote class="instagram-media mx-auto"
+                        data-instgrm-permalink="https://www.instagram.com/reel/DYPoSOolEBe/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14"
+                        style="background: transparent; border: 0; border-radius: 24px; box-shadow: none; margin: 0 auto; max-width: 326px; min-width: 326px; width: 326px; padding: 0;">
+                        <div style="padding:16px;">
+                            <a href="https://www.instagram.com/reel/DYPoSOolEBe/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style="background: transparent; line-height: 0; padding: 0 0; text-align: center; text-decoration: none; width: 100%;"
+                                target="_blank">
+                                <div style="display: flex; flex-direction: row; align-items: center;">
+                                    <div
+                                        style="background-color: #1c1c1e; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                    </div>
+                                    <div
+                                        style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                        </div>
+                                        <div
+                                            style="background-color: #1c1c1e; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding: 19% 0;"></div>
+                                <div style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;">
+                                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1"
+                                        xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-511.000000, -20.000000)" fill="#ffffff">
+                                                <g>
+                                                    <path
+                                                        d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div style="padding-top: 8px;">
+                                    <div
+                                        style="color: #3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;">
+                                        Ver esta publicación en Instagram</div>
+                                </div>
+                                <div style="padding: 12.5% 0;"></div>
+                            </a>
+                        </div>
+                    </blockquote>
+                </div>
+
+            </div>
+            <script async src="https://www.tiktok.com/embed.js"></script>
+            <script async src="https://www.instagram.com/embed.js"></script>
+
+            <!-- Mensaje cuando no hay resultados (Oculto por defecto) -->
+            <div id="no-results" class="hidden text-center py-16">
+                <p class="text-apple-gray text-lg font-light">No hay proyectos en esta categoría por el momento.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-32 bg-apple-dark border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">Iniciemos tu proyecto.</h2>
+                <p class="text-apple-gray text-lg font-light">Cuéntanos sobre tu marca y los objetivos de tu próximo
+                    video.</p>
+            </div>
+
+            <div class="bg-black p-8 md:p-12 rounded-3xl border border-white/10">
+                <!-- Formulario -->
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-apple-gray mb-2">Empresa /
+                                Nombre</label>
+                            <input type="text" id="name" required class="minimal-input w-full px-4 py-4 text-base"
+                                placeholder="Apple Inc.">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-apple-gray mb-2">Email de
+                                contacto</label>
+                            <input type="email" id="email" required class="minimal-input w-full px-4 py-4 text-base"
+                                placeholder="hola@empresa.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-apple-gray mb-2">Detalles del
+                            proyecto</label>
+                        <textarea id="message" rows="4" required
+                            class="minimal-input w-full px-4 py-4 text-base resize-none"
+                            placeholder="Buscamos producir un anuncio de 30 segundos..."></textarea>
+                    </div>
+                    <button type="submit"
+                        class="btn-primary w-full py-4 rounded-xl font-semibold text-lg flex justify-center items-center mt-4">
+                        Enviar solicitud
+                    </button>
+                </form>
+
+                <!-- Mensaje de éxito oculto por defecto -->
+                <div id="success-message" class="hidden text-center py-10">
+                    <div
+                        class="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-2">Solicitud enviada</h3>
+                    <p class="text-apple-gray font-light mb-8">Gracias por contactarnos. Nuestro equipo revisará los
+                        detalles y te responderemos pronto.</p>
+                    <button id="reset-form-btn"
+                        class="text-white hover:text-apple-gray transition-colors font-medium border-b border-white pb-1">Enviar
+                        otro mensaje</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <span class="text-lg font-semibold tracking-tight text-white">Growth Personal Brand Experts.</span>
+            </div>
+            <p class="text-apple-gray text-sm font-light">
+                &copy; <span id="year"></span> Growth Personal Brand Experts. Todos los derechos reservados.
+            </p>
+            <div class="flex gap-6">
+                <a href="#" class="text-apple-gray hover:text-white transition-colors"><i
+                        class="fab fa-instagram text-lg"></i></a>
+                <a href="#" class="text-apple-gray hover:text-white transition-colors"><i
+                        class="fab fa-vimeo-v text-lg"></i></a>
+                <a href="#" class="text-apple-gray hover:text-white transition-colors"><i
+                        class="fab fa-linkedin-in text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Actualizar año del footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica del menú móvil
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!menu.classList.contains('hidden')) toggleMenu();
+            });
+        });
+
+        // Cambiar estilo del navbar al hacer scroll (efecto cristal)
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('border-b', 'border-white/10');
+                nav.style.background = 'rgba(0, 0, 0, 0.7)';
+            } else {
+                nav.classList.remove('border-b', 'border-white/10');
+                nav.style.background = 'transparent';
+            }
+        });
+        // Disparar evento al cargar para setear el estado inicial
+        window.dispatchEvent(new Event('scroll'));
+
+        // ==========================================
+        // LÓGICA DEL FILTRO DE VIDEOS (NICHOS)
+        // ==========================================
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const noResultsMsg = document.getElementById('no-results');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. Quitar estado activo
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-[#f5f5f7]', 'text-black', 'border-[#f5f5f7]');
+                    b.classList.add('text-[#86868b]', 'border-white/15');
+                });
+
+                // 2. Agregar estado activo
+                btn.classList.add('active', 'bg-[#f5f5f7]', 'text-black', 'border-[#f5f5f7]');
+                btn.classList.remove('text-[#86868b]', 'border-white/15');
+
+                // 3. Obtener el valor
+                const filterValue = btn.getAttribute('data-filter');
+                let itemsVisible = 0;
+
+                // 4. Mostrar/Ocultar
+                portfolioItems.forEach(item => {
+                    item.style.animation = 'none';
+                    item.offsetHeight; // Trigger reflow
+                    item.style.animation = null;
+
+                    if (filterValue === 'all' || item.getAttribute('data-niche') === filterValue) {
+                        item.style.display = 'block';
+                        itemsVisible++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // 5. Mensaje vacío
+                if (itemsVisible === 0) {
+                    noResultsMsg.classList.remove('hidden');
+                } else {
+                    noResultsMsg.classList.add('hidden');
+                }
+            });
+        });
+
+        // Simulación de formulario
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        const resetBtn = document.getElementById('reset-form-btn');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactForm.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+        });
+
+        resetBtn.addEventListener('click', () => {
+            contactForm.reset();
+            successMessage.classList.add('hidden');
+            contactForm.classList.remove('hidden');
+        });
+    </script>
+</body>
+
+</html>
